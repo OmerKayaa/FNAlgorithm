@@ -1,1 +1,1 @@
-# FNAlgorithm
+# Filtering by Number Algorithm
