@@ -1,5 +1,5 @@
 package FNA.Groups;
 
-public class LongNumberGroup
+public class LongNumberGroup<E>
 {
 }

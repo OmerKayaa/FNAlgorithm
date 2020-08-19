@@ -9,17 +9,14 @@ public abstract class BidiDictionary<T,E>
 {
    private BidiMap<T,E> dictionary = new DualHashBidiMap<>();
    
-   public void registerNewElement(E element)
+   T registerNewElement(E element)
    {
-      if(!dictionary.containsValue(element))
-      {
-         dictionary.put(typeGenerator(PrimeNumbers.getPrime(dictionary.size())),element);
-      }
+      T key = typeGenerator(PrimeNumbers.getPrime(dictionary.size()));
+      dictionary.put(key,element);
+      return key;
    }
    
-   public abstract T typeGenerator(int i);
-   
-   public Optional<T> findKey(E element)
+   Optional<T> findKey(E element)
    {
       if(dictionary.containsValue(element))
          return Optional.of(dictionary.getKey(element));
@@ -27,13 +24,21 @@ public abstract class BidiDictionary<T,E>
          return Optional.empty();
    }
    
-   public Optional<E> findValue(T Key)
+   T findKeyOrCreate(E element)
+   {
+      Optional<T> optionalT = findKey(element);
+      return optionalT.orElseGet(() -> registerNewElement(element));
+   }
+   
+   Optional<E> findValue(T Key)
    {
       return Optional.of(dictionary.get(Key));
    }
    
-   public void reset()
+   void reset()
    {
       dictionary = new DualHashBidiMap<>();
    }
+   
+   public abstract T typeGenerator(int i);
 }

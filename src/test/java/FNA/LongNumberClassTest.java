@@ -4,8 +4,6 @@ import FNA.ArithmeticsTypes.LongNumber;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.math.BigInteger;
-
 import static org.junit.Assert.*;
 
 public class LongNumberClassTest
@@ -22,8 +20,7 @@ public class LongNumberClassTest
    public void testZero()
    {
       assertFalse(ln.isZero());
-      ln.multiplication(0L);
-      assertTrue(ln.isZero());
+      assertTrue(ln.multiplication(0L).isZero());
    }
    
    @Test
@@ -36,6 +33,15 @@ public class LongNumberClassTest
    public void testSetNumber()
    {
       ln.setValue(100);
-      assertEquals(ln.getValue().toString(),new BigInteger("100").toString());
+      assertEquals(ln.getValue(), Long.valueOf(100L));
+   }
+   
+   @Test
+   public void testGCD()
+   {
+      ln.setValue(888);
+      assertEquals(111L, (long) ln.GCD(new LongNumber(555)).getValue());
+      assertEquals(222L, (long) ln.GCD(new LongNumber(666)).getValue());
+      assertEquals(444L, (long) ln.GCD(new LongNumber(444)).getValue());
    }
 }

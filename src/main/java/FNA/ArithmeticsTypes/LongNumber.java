@@ -2,46 +2,51 @@ package FNA.ArithmeticsTypes;
 
 public class LongNumber extends ArithmeticTypes<Long>
 {
-   public LongNumber() {};
+   public LongNumber(){}
    
-   public LongNumber(int value)
+   public LongNumber(int i)
    {
-      this.setValue(value);
+      setValue(i);
    }
    
-   @Override public void division(Long number)
+   public LongNumber(long l)
    {
-      setValue(value / number);
+      this.value = l;
    }
    
-   @Override public void multiplication(Long number)
+   @Override public ArithmeticsOperations<Long> division(Long number)
    {
-      setValue(value * number);
+      return new LongNumber(this.value/number);
    }
    
-   @Override public Long remainder(Long number)
+   @Override public ArithmeticsOperations<Long> multiplication(Long number)
    {
-      return value % number;
-   }
-   
-   @Override public boolean noRemainder(Long number)
-   {
-      return value % number == 0;
+      return new LongNumber(this.value*number);
    }
    
    @Override public ArithmeticsOperations<Long> setValue(int value)
    {
-      this.value = (long)value;
+      this.value = (long) value;
       return this;
+   }
+   
+   @Override public ArithmeticsOperations<Long> remainder(Long number)
+   {
+      return new LongNumber(this.value % number);
+   }
+   
+   @Override public boolean noRemainder(Long number)
+   {
+      return false;
    }
    
    @Override public boolean isZero()
    {
-      return value == 0;
+      return this.value == 0;
    }
    
    @Override public boolean isOne()
    {
-      return value == 1;
+      return this.value == 1;
    }
 }

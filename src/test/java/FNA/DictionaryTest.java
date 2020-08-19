@@ -1,11 +1,10 @@
 package FNA;
 
 import FNA.ArithmeticsTypes.LongNumber;
-import FNA.Repositories.BidiDictionary;
+import FNA.Repositories.HashLongNumberRepository;
 import FNA.Repositories.Repository;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.internal.runners.statements.Fail;
 
 import java.util.stream.IntStream;
 
@@ -13,13 +12,7 @@ import static org.junit.Assert.*;
 
 public class DictionaryTest
 {
-   BidiDictionary<LongNumber, String> dictionary = new Repository<>()
-   {
-      @Override public LongNumber typeGenerator(int i)
-      {
-         return new LongNumber(i);
-      }
-   };
+   Repository<LongNumber, String> dictionary = new HashLongNumberRepository<>();
    
    @Before
    public void reset()
@@ -30,23 +23,23 @@ public class DictionaryTest
    @Test
    public void testRegistering()
    {
-      dictionary.registerNewElement("Test");
+      dictionary.addNewKey("Test");
    }
    
    @Test
    public void testAdding()
    {
-      IntStream.range(1, 5).forEach( i -> dictionary.registerNewElement("Test" + i));
+      IntStream.range(1, 5).forEach( i -> dictionary.addNewKey("Test" + i));
    }
    
    @Test
    public void testFinding()
    {
-      assertTrue(dictionary.findKey("Non").isEmpty());
+      assertTrue(dictionary.getKeyByValue("Non").isEmpty());
       IntStream.range(1, 5).forEach( i ->
                                      {
-                                        dictionary.registerNewElement("Test" + i);
-                                        assertFalse(dictionary.findKey("Test" + i).isEmpty());
+                                        dictionary.addNewKey("Test" + i);
+                                        assertFalse(dictionary.getKeyByValue("Test" + i).isEmpty());
                                      });
    }
    
@@ -55,8 +48,8 @@ public class DictionaryTest
    {
       IntStream.range(1, 5).forEach( i ->
                                      {
-                                        dictionary.registerNewElement("Test" + i);
-                                        assertNotNull(dictionary.findValue(dictionary.findKey(
+                                        dictionary.addNewKey("Test" + i);
+                                        assertNotNull(dictionary.getValueByKey(dictionary.getKeyByValue(
                                              "Test" + i).get()).get());
                                      });
    }

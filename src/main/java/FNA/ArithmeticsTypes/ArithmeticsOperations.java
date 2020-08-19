@@ -2,14 +2,14 @@ package FNA.ArithmeticsTypes;
 
 public interface ArithmeticsOperations<N>
 {
-   void division(N number);
-   void multiplication(N number);
+   ArithmeticsOperations<N> division(N number);
+   ArithmeticsOperations<N> multiplication(N number);
    
-   String getValue();
-   ArithmeticsOperations<N> setValue(N value);
+   N getValue();
    ArithmeticsOperations<N> setValue(int value);
+   ArithmeticsOperations<N> remainder(N number);
    
-   N remainder(N number);
+   ArithmeticsOperations<N> GCD(ArithmeticsOperations<N> number);
    
    boolean noRemainder(N number);
    boolean isZero();
