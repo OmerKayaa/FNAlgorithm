@@ -4,6 +4,7 @@ public abstract class ArithmeticTypes<T> implements ArithmeticsOperations<T>
 {
    protected T value;
    
+   @Override
    public ArithmeticsOperations<T> setValue(T value)
    {
       this.value = value;
@@ -21,5 +22,4 @@ public abstract class ArithmeticTypes<T> implements ArithmeticsOperations<T>
          return this;
       else return number.GCD(this.remainder(number.getValue()));
    }
-   
 }

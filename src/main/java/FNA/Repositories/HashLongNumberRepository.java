@@ -4,9 +4,19 @@ import FNA.ArithmeticsTypes.LongNumber;
 
 public class HashLongNumberRepository<E> extends Repository<Long,LongNumber,E>
 {
-   @Override public LongNumber typeGenerator(int i)
+   public HashLongNumberRepository()
    {
-      return new LongNumber(i);
+      super(new LongNumber(1));
    }
    
+   @Override protected Long newInstance(int i)
+   {
+      return (long) i;
+   }
+   
+   
+   @Override public void resetElements()
+   {
+      this.arithmeticRepo.setValue(1L);
+   }
 }

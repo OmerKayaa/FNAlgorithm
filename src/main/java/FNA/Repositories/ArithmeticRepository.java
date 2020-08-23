@@ -2,19 +2,15 @@ package FNA.Repositories;
 
 import FNA.ArithmeticsTypes.ArithmeticsOperations;
 
-import java.util.Optional;
+import java.util.Map;
 
-public interface ArithmeticRepository<N extends ArithmeticsOperations<?>,E>
+public interface ArithmeticRepository<T,N extends ArithmeticsOperations<T>,E>
 {
-   Optional<N> getKeyByValue(E element);
-   void addNewKey(E element);
-   Optional<E> getValueByKey(N Key);
+   void add(E element);
+   void remove(E element);
    
-   void add(E value);
-   void remove(E value);
+   boolean hasElement(E element);
    
-   void addNewElementToRepository(N repository);
-   void removeElementFromRepository(N repository);
-   
-   int size();
+   void combineTheRepositories(N repository);
+   void retailTheRepositories(N repository);
 }

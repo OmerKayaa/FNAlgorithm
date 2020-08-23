@@ -20,12 +20,13 @@ public class PrimeNumbers
    }
    
    /**
-    * Gives Nth prime number is exist if not creates
+    * Gives Nth prime number is if exists
+    * if not creates
     * {@code primes}
     */
    public static int getPrime(int number)
    {
-      while (number > primes.size())
+      while (number >= primes.size())
          addNextPrimeNumberToList();
       return primes.get(number);
    }

@@ -1,8 +1,8 @@
 package FNA;
 
 import FNA.ArithmeticsTypes.LongNumber;
+import FNA.Repositories.BidiDictionary;
 import FNA.Repositories.HashLongNumberRepository;
-import FNA.Repositories.Repository;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 
 public class DictionaryTest
 {
-   Repository<LongNumber, String> dictionary = new HashLongNumberRepository<>();
+   BidiDictionary<Long,String> dictionary = new HashLongNumberRepository<>();
    
    @Before
    public void reset()
@@ -23,23 +23,23 @@ public class DictionaryTest
    @Test
    public void testRegistering()
    {
-      dictionary.addNewKey("Test");
+      dictionary.registerNewElement("Test");
    }
    
    @Test
    public void testAdding()
    {
-      IntStream.range(1, 5).forEach( i -> dictionary.addNewKey("Test" + i));
+      IntStream.range(1, 5).forEach( i -> dictionary.registerNewElement("Test" + i));
    }
    
    @Test
    public void testFinding()
    {
-      assertTrue(dictionary.getKeyByValue("Non").isEmpty());
+      assertTrue(dictionary.findKey("Non").isEmpty());
       IntStream.range(1, 5).forEach( i ->
                                      {
-                                        dictionary.addNewKey("Test" + i);
-                                        assertFalse(dictionary.getKeyByValue("Test" + i).isEmpty());
+                                        dictionary.registerNewElement("Test" + i);
+                                        assertFalse(dictionary.findKey("Test" + i).isEmpty());
                                      });
    }
    
@@ -48,9 +48,17 @@ public class DictionaryTest
    {
       IntStream.range(1, 5).forEach( i ->
                                      {
-                                        dictionary.addNewKey("Test" + i);
-                                        assertNotNull(dictionary.getValueByKey(dictionary.getKeyByValue(
+                                        dictionary.registerNewElement("Test" + i);
+                                        assertNotNull(dictionary.findValue(dictionary.findKey(
                                              "Test" + i).get()).get());
                                      });
+   }
+   
+   @Test
+   public void testViewDictionary()
+   {
+      IntStream.range(1, 5).forEach( i -> dictionary.registerNewElement("Test" + i));
+      dictionary.keySet().forEach(System.out::println);
+      dictionary.elementSet().forEach(System.out::println);
    }
 }
