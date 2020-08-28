@@ -1,6 +1,7 @@
 package FNA;
 
 import FNA.Repositories.HashLongNumberRepository;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,6 +22,16 @@ public class HashLongNumberRepositoryTest
                                        repository2.add("Test" + (value + 20));
                                     });
       repository1.add("Test11");
+   }
+   
+   @Test
+   public void testGetAll()
+   {
+      String all = "Test1 " +"Test1 " +"Test2 " +"Test2 " +"Test11 " +"Test3 " +"Test4 " +"Test5 " +"Test6 ";
+      
+      repository1.add("Test" + 1);
+      repository1.add("Test" + 2);
+      repository1.getAll().forEach(s -> Assert.assertTrue(all.contains(s)));
    }
    
    @Test

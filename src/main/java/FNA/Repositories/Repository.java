@@ -2,6 +2,11 @@ package FNA.Repositories;
 
 import FNA.ArithmeticsTypes.ArithmeticsOperations;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.IntStream;
+
 public abstract class  Repository<R,T extends ArithmeticsOperations<R>,E>
       extends BidiDictionary<R,E> implements ArithmeticRepository<R,T,E>
 {
@@ -20,6 +25,13 @@ public abstract class  Repository<R,T extends ArithmeticsOperations<R>,E>
    @Override public void add(E element)
    {
       arithmeticRepo.setValue(arithmeticRepo.multiplication(findKeyOrCreate(element)).getValue());
+   }
+   
+   @Override public Collection<E> getAll()
+   {
+      List<E> All = new ArrayList<>();
+      elementSet().forEach(e -> IntStream.range(0,howManyExits(e)).forEach(value -> All.add(e)));
+      return All;
    }
    
    @Override public void remove(E element)

@@ -43,17 +43,17 @@ public class LongNumber extends ArithmeticTypes<Long>
    
    @Override public boolean noRemainder(Long number)
    {
-      return this.value % number == 0;
+      return this.value % number == 0L;
    }
    
    @Override public boolean isZero()
    {
-      return this.value == 0;
+      return this.value == 0L;
    }
    
    @Override public boolean isOne()
    {
-      return this.value == 1;
+      return this.value == 1L;
    }
    
 }
