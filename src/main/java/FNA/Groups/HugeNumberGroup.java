@@ -3,6 +3,14 @@ package FNA.Groups;
 import FNA.Repositories.HashHugeNumberRepository;
 import FNA.Repositories.HashLongNumberRepository;
 
+import java.util.Collection;
+
+/**
+ * @author  Omer Kaya github.com/OmerKayaa
+ * @version 1.0
+ * @since   2020
+ */
+
 public class HugeNumberGroup<E> extends Group<E, HashHugeNumberRepository<E>>
 {
    public HugeNumberGroup()
@@ -10,14 +18,30 @@ public class HugeNumberGroup<E> extends Group<E, HashHugeNumberRepository<E>>
       super(new HashHugeNumberRepository<E>());
    }
    
-   public boolean containsAll(Group<E, HashHugeNumberRepository<E>> c)
+   public boolean containsAll(HugeNumberGroup<E> group)
    {
-      return this.repository.hasAll(c.repository.getRepo());
+      this.repository.syncDictionary(group.repository.getDictionary());
+      return this.repository.hasAll(group.repository.getRepo());
    }
-   
-   public boolean retainAll(Group<E, HashHugeNumberRepository<E>> c)
+
+   public boolean removeAll(HugeNumberGroup<E> group)
    {
-      this.repository.retailTheRepositories(c.repository.getRepo());
+      this.repository.syncDictionary(group.repository.getDictionary());
+      this.repository.disjunctTheRepositories(group.repository.getRepo());
+      return true;
+   }
+
+   public boolean retainAll(HugeNumberGroup<E> group)
+   {
+      this.repository.syncDictionary(group.repository.getDictionary());
+      this.repository.retailTheRepositories(group.repository.getRepo());
+      return true;
+   }
+
+   public boolean addAll(HugeNumberGroup<E> group)
+   {
+      this.repository.syncDictionary(group.repository.getDictionary());
+      this.repository.combineTheRepositories(group.repository.getRepo());
       return true;
    }
 }

@@ -3,6 +3,12 @@ package FNA.Repositories;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author  Omer Kaya github.com/OmerKayaa
+ * @version 1.0
+ * @since   2020
+ */
+
 public class PrimeNumbers
 {
    /**

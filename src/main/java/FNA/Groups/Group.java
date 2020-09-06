@@ -5,6 +5,12 @@ import FNA.Repositories.Repository;
 import java.util.Collection;
 import java.util.Iterator;
 
+/**
+ * @author  Omer Kaya github.com/OmerKayaa
+ * @version 1.0
+ * @since   2020
+ */
+
 public abstract class Group<E,R extends Repository<?,?,E>> implements Collection<E>
 {
    protected R repository;

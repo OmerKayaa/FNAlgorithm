@@ -6,6 +6,12 @@ import org.apache.commons.collections4.bidimap.DualHashBidiMap;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * @author  Omer Kaya github.com/OmerKayaa
+ * @version 1.0
+ * @since   2020
+ */
+
 public abstract class BidiDictionary<T,E>
 {
    private BidiMap<T,E> dictionary = new DualHashBidiMap<>();
@@ -50,9 +56,9 @@ public abstract class BidiDictionary<T,E>
       this.dictionary = dictionary.dictionary;
    }
    
-   public BidiMap<T,E> getDictionary()
+   public BidiDictionary<T,E> getDictionary()
    {
-      return dictionary;
+      return this;
    }
    
    public T registerNewElement(E element)

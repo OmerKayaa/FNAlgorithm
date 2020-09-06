@@ -2,6 +2,12 @@ package FNA.ArithmeticsTypes;
 
 import java.math.BigInteger;
 
+/**
+ * @author  Omer Kaya github.com/OmerKayaa
+ * @version 1.0
+ * @since   2020
+ */
+
 public class HugeNumber extends ArithmeticTypes<BigInteger>
 {
    public HugeNumber()
@@ -31,7 +37,7 @@ public class HugeNumber extends ArithmeticTypes<BigInteger>
    
    @Override public ArithmeticsOperations<BigInteger> newInstance(BigInteger number)
    {
-      return new HugeNumber();
+      return new HugeNumber(number);
    }
    
    @Override public ArithmeticsOperations<BigInteger> setValue(int value)

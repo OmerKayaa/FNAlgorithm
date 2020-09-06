@@ -2,6 +2,13 @@ package FNA.Groups;
 
 import FNA.Repositories.HashLongNumberRepository;
 
+/**
+ * @author  Omer Kaya github.com/OmerKayaa
+ * @version 1.0
+ * @since   2020
+ */
+
+@SuppressWarnings("Please do not LongNumberGroup if it not absolutely necessary")
 public class LongNumberGroup<E> extends Group<E, HashLongNumberRepository<E>>
 {
    public LongNumberGroup()
@@ -9,14 +16,25 @@ public class LongNumberGroup<E> extends Group<E, HashLongNumberRepository<E>>
       super(new HashLongNumberRepository<E>());
    }
    
-   public boolean containsAll(Group<E, HashLongNumberRepository<E> > c)
+   public boolean containsAll(LongNumberGroup<E> group)
    {
-      return this.repository.hasAll(c.repository.getRepo());
+      this.repository.syncDictionary(group.repository.getDictionary());
+      //needs to be implemented
+      return this.repository.hasAll(group.repository.getRepo());
    }
    
-   public boolean retainAll(Group<E, HashLongNumberRepository<E>> c)
+   public boolean retainAll(LongNumberGroup<E> group)
    {
-      this.repository.retailTheRepositories(c.repository.getRepo());
+      this.repository.syncDictionary(group.repository.getDictionary());
+      //needs to be implemented
+      this.repository.retailTheRepositories(group.repository.getRepo());
+      return true;
+   }
+
+   public boolean addAll(LongNumberGroup<E> group)
+   {
+      this.repository.syncDictionary(group.repository.getDictionary());
+      //needs to be implemented
       return true;
    }
 }

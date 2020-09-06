@@ -1,8 +1,17 @@
 package FNA.ArithmeticsTypes;
 
+/**
+ * @author  Omer Kaya
+ * @version 1.0
+ * @since   2020
+ */
 
+@SuppressWarnings("Please do not LongNumber class if its not absolutely necessary")
 public class LongNumber extends ArithmeticTypes<Long>
 {
+   /**
+    *
+    */
    public LongNumber(){}
    
    public LongNumber(int i)

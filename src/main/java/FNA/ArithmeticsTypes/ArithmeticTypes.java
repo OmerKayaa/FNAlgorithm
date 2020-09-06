@@ -1,5 +1,11 @@
 package FNA.ArithmeticsTypes;
 
+/**
+ * @author  Omer Kaya github.com/OmerKayaa
+ * @version 1.0
+ * @since   2020
+ */
+
 public abstract class ArithmeticTypes<T> implements ArithmeticsOperations<T>
 {
    protected T value;

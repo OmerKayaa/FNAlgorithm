@@ -7,6 +7,12 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.IntStream;
 
+/**
+ * @author  Omer Kaya github.com/OmerKayaa
+ * @version 1.0
+ * @since   2020
+ */
+
 public abstract class  Repository<R,T extends ArithmeticsOperations<R>,E>
       extends BidiDictionary<R,E> implements ArithmeticRepository<R,T,E>
 {
@@ -46,7 +52,7 @@ public abstract class  Repository<R,T extends ArithmeticsOperations<R>,E>
    
    @Override public void retailTheRepositories(T repository)
    {
-      repository.setValue(arithmeticRepo.GCD(repository).getValue());
+      arithmeticRepo.setValue(arithmeticRepo.GCD(repository).getValue());
    }
    
    @Override public boolean hasElement(E element)
@@ -85,7 +91,7 @@ public abstract class  Repository<R,T extends ArithmeticsOperations<R>,E>
    
    @Override public void disjunctTheRepositories(T repository)
    {
-      repository.setValue(arithmeticRepo.division(arithmeticRepo.GCD(repository).getValue()).getValue());
+      arithmeticRepo.setValue(arithmeticRepo.division(arithmeticRepo.GCD(repository).getValue()).getValue());
    }
    
    public void resetDictionary()
