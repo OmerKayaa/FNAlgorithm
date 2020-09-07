@@ -53,7 +53,8 @@ public class HugeNumber extends ArithmeticTypes<BigInteger>
    
    @Override public boolean noRemainder(BigInteger number)
    {
-      return this.value.remainder(number).equals(BigInteger.ZERO);
+      var a = this.value.remainder(number);
+      return a.equals(BigInteger.ZERO);
    }
    
    @Override public boolean isZero()

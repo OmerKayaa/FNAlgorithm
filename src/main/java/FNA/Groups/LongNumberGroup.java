@@ -8,7 +8,7 @@ import FNA.Repositories.HashLongNumberRepository;
  * @since   2020
  */
 
-@SuppressWarnings("Please do not LongNumberGroup if it not absolutely necessary")
+@SuppressWarnings("Please do not use LongNumberGroup if it not absolutely necessary")
 public class LongNumberGroup<E> extends Group<E, HashLongNumberRepository<E>>
 {
    public LongNumberGroup()

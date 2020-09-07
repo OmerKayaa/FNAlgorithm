@@ -54,6 +54,11 @@ public abstract class  Repository<R,T extends ArithmeticsOperations<R>,E>
    {
       arithmeticRepo.setValue(arithmeticRepo.GCD(repository).getValue());
    }
+
+   @Override public void disjunctTheRepositories(T repository)
+   {
+      arithmeticRepo.setValue(arithmeticRepo.division(arithmeticRepo.GCD(repository).getValue()).getValue());
+   }
    
    @Override public boolean hasElement(E element)
    {
@@ -62,7 +67,7 @@ public abstract class  Repository<R,T extends ArithmeticsOperations<R>,E>
    
    @Override public boolean hasAll(T repository)
    {
-      return repository.noRemainder(repository.getValue());
+      return arithmeticRepo.noRemainder(repository.getValue());
    }
    
    @Override public int howManyExits(E element)
@@ -87,11 +92,6 @@ public abstract class  Repository<R,T extends ArithmeticsOperations<R>,E>
       {
          add(element);
       }
-   }
-   
-   @Override public void disjunctTheRepositories(T repository)
-   {
-      arithmeticRepo.setValue(arithmeticRepo.division(arithmeticRepo.GCD(repository).getValue()).getValue());
    }
    
    public void resetDictionary()

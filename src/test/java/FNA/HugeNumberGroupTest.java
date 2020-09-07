@@ -100,7 +100,7 @@ public class HugeNumberGroupTest
 
         group1.addAll(group2);
 
-        Assert.assertEquals(4,group1.size());
+        Assert.assertEquals(5,group1.size());
     }
 
     @Test
@@ -129,5 +129,21 @@ public class HugeNumberGroupTest
         group1.retainAll(group2);
 
         Assert.assertEquals(1,group1.size());
+    }
+
+    @Test
+    public void testHasAll()
+    {
+        group1.add("Test1");
+        group1.add("Test2");
+        group1.add("Test3");
+        group2.add("Test1");
+        group2.add("Test4");
+
+        Assert.assertFalse(group1.containsAll(group2));
+
+        group1.add("Test4");
+
+        Assert.assertTrue(group1.containsAll(group2));
     }
 }

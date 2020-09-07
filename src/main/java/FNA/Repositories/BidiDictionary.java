@@ -5,6 +5,7 @@ import org.apache.commons.collections4.bidimap.DualHashBidiMap;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * @author  Omer Kaya github.com/OmerKayaa
@@ -18,6 +19,8 @@ public abstract class BidiDictionary<T,E>
    
    public void syncDictionary(BidiDictionary<T,E> dictionary)
    {
+      if(this.dictionary == dictionary)
+         return;
       if(dictionary.dictionary != null && ( dictionary.dictionary.size()!=0 || this.dictionary.size()!=0))
       {
          if(dictionary.dictionary.size()==0)
@@ -30,21 +33,19 @@ public abstract class BidiDictionary<T,E>
             this.dictionary.values().forEach(e -> table.put(e,howManyExits(e)));
             dictionary.dictionary.values().forEach(e -> table.put(e ,table.getOrDefault(e,0)
                                                                      + dictionary.howManyExits(e)));
-            
+
             Map<E, Integer> sorted = table.entrySet().stream().sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
                  .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2, LinkedHashMap::new));
-   
-            BidiMap<T,E> newDictionary = new DualHashBidiMap<>();
-            sorted.keySet().stream().forEach(e ->
-               newDictionary.put(this.dictionary.getKey(e)==null? dictionary.dictionary.getKey(e) : this.dictionary.getKey(e) ,e) );
    
             NavigableMap<E,Integer> table1 = new TreeMap<>();
             this.dictionary.values().forEach(e -> table1.put(e,howManyExits(e)));
    
             NavigableMap<E,Integer> table2 = new TreeMap<>();
-            dictionary.dictionary.values().forEach(e -> table2.put(e,howManyExits(e)));
-            
-            dictionary.dictionary = newDictionary;
+            dictionary.dictionary.values().forEach(e -> table2.put(e,dictionary.howManyExits(e)));
+
+            dictionary.dictionary = new DualHashBidiMap<>();
+            this.dictionary = dictionary.dictionary;
+            sorted.forEach((e, integer) -> dictionary.findKeyOrCreate(e));
    
             dictionary.resetElements();
             table2.entrySet().forEach(e -> dictionary.addElement(e.getKey(),e.getValue()));

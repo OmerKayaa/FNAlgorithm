@@ -6,12 +6,9 @@ package FNA.ArithmeticsTypes;
  * @since   2020
  */
 
-@SuppressWarnings("Please do not LongNumber class if its not absolutely necessary")
+@SuppressWarnings("Please do not use LongNumber class if its not absolutely necessary")
 public class LongNumber extends ArithmeticTypes<Long>
 {
-   /**
-    *
-    */
    public LongNumber(){}
    
    public LongNumber(int i)

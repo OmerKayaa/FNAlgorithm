@@ -14,7 +14,8 @@ public class MainTest
               HashHugeNumberRepositoryTest.class,
               HashLongNumberRepositoryTest.class,
               DictionaryTest2.class,
-              DictionaryTest.class);
+              DictionaryTest.class,
+              HugeNumberGroupTest.class);
 
       for (Failure failure : result.getFailures()) {
          System.out.println(failure.toString());

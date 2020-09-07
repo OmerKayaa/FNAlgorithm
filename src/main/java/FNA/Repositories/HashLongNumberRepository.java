@@ -8,7 +8,7 @@ import FNA.ArithmeticsTypes.LongNumber;
  * @since   2020
  */
 
-@SuppressWarnings("Please do not HashLongNumberRepository class if its not absolutely necessary")
+@SuppressWarnings("Please do not use HashLongNumberRepository class if its not absolutely necessary")
 public class HashLongNumberRepository<E> extends Repository<Long,LongNumber,E>
 {
    public HashLongNumberRepository()
