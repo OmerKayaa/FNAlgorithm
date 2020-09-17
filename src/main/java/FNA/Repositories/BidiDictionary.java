@@ -8,6 +8,9 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
+ * This class is used for assigning prime number values
+ * to elements
+ *
  * @author  Omer Kaya github.com/OmerKayaa
  * @version 1.0
  * @since   2020

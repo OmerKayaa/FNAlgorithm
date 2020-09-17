@@ -3,6 +3,8 @@ package FNA.ArithmeticsTypes;
 import java.math.BigInteger;
 
 /**
+ * Big Integer class used as number to store data.
+ *
  * @author  Omer Kaya github.com/OmerKayaa
  * @version 1.0
  * @since   2020

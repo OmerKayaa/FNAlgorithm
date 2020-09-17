@@ -21,7 +21,20 @@ public abstract class ArithmeticTypes<T> implements ArithmeticsOperations<T>
    {
       return value;
    }
-   
+
+   /**
+    * Euclidean greatest common divisor algorithm(GCD)
+    * Time complexity is log(N)
+    *
+    * -WARNING-
+    * Do not use reference of your object. Create a
+    * new instance. This method changes value of your
+    * parameter
+    *
+    * @param number other number that will be used
+    *               for finding GCD
+    * @return ArithmeticsOperations value of result
+    */
    @Override public ArithmeticsOperations<T> GCD(ArithmeticsOperations<T> number)
    {
       if(number.isZero())

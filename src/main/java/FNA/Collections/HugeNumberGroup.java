@@ -1,9 +1,6 @@
-package FNA.Groups;
+package FNA.Collections;
 
 import FNA.Repositories.HashHugeNumberRepository;
-import FNA.Repositories.HashLongNumberRepository;
-
-import java.util.Collection;
 
 /**
  * @author  Omer Kaya github.com/OmerKayaa

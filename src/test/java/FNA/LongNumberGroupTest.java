@@ -1,22 +1,22 @@
 package FNA;
 
-import FNA.Collections.HugeNumberGroup;
+import FNA.Collections.LongNumberGroup;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.stream.IntStream;
 
-public class HugeNumberGroupTest
+public class LongNumberGroupTest
 {
-    HugeNumberGroup<String> group1 = new HugeNumberGroup<>();
-    HugeNumberGroup<String> group2 = new HugeNumberGroup<>();
+    LongNumberGroup<String> group1 = new LongNumberGroup<>();
+    LongNumberGroup<String> group2 = new LongNumberGroup<>();
 
     @Before
     public void setUp()
     {
-        group1 = new HugeNumberGroup<>();
-        group2 = new HugeNumberGroup<>();
+        group1 = new LongNumberGroup<>();
+        group2 = new LongNumberGroup<>();
     }
 
     @Test
@@ -147,3 +147,4 @@ public class HugeNumberGroupTest
         Assert.assertTrue(group1.containsAll(group2));
     }
 }
+

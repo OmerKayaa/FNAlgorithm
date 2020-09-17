@@ -1,6 +1,8 @@
 package FNA.ArithmeticsTypes;
 
 /**
+ * Long class used as number to store data.
+ *
  * @author  Omer Kaya
  * @version 1.0
  * @since   2020
