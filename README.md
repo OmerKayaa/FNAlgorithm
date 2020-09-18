@@ -20,7 +20,7 @@ This project is a proof that using prime numbers to build a data structure is po
 
 ## Performace (in Theory)
 
-To increase performance I used Euclidean greatest common divisor algorithm (GCD) it alowed me to find common primes numbers at time complexity of Log N
+To increase performance I used Euclidean Greatest common divisor algorithm (GCD) it alowed me to find common primes numbers at time complexity of Log N
 
 Command / Algorithm | Linked List | Array List | FNA
 --- | --- | --- | ---
@@ -40,34 +40,3 @@ Command / Algorithm | Linked List | Array List | FNA
  `removeAll()` | **O(N)** | **O(N^2)** | **O(Log(N))** 
  `retailAll()` | **O(N^2)** | **O(N^2)** | **O(Log(N))** 
  `containsAll()` | **O(N^2)** | **O(N^2)** | **O(Log(N))** 
- 
- ### Visualization of the performance
- 
-Command | Performance
---- | ---
-`get()` | ![get-visual][command-get]
-`add()` | ![get-visual][command-add]
-`remove()` | ![get-visual][command-remove]
-`find()` | ![get-visual][command-find]
-`contains()` | ![get-visual][command-contains]
-
----
-
-Algorithm | Performance
---- | ---
- `addAll()` | ![get-visual][algorithm-add]
-`removeAll()` | ![get-visual][algorithm-remove]
-`retailAll()` | ![get-visual][algorithm-retail]
- `containsAll()` | ![get-visual][algorithm-contains]
-
-[command-get]: https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Command/get.png
-[command-add]: https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Command/add.png
-[command-remove]: https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Command/remove.png
-[command-find]: https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Command/contain-search.png
-[command-contains]: https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Command/contain-search.png
-
-[algorithm-add]: https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Algoritm/AddAll.png
-[algorithm-remove]: https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Algoritm/RemoveAll.png
-[algorithm-retail]: https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Algoritm/RetailAll-ContainsAll.png
-[algorithm-contains]: https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Algoritm/RetailAll-ContainsAll.png
-
