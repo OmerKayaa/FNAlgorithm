@@ -40,3 +40,23 @@ Command / Algorithm | Linked List | Array List | FNA
  `removeAll()` | **O(N)** | **O(N^2)** | **O(Log(N))** 
  `retailAll()` | **O(N^2)** | **O(N^2)** | **O(Log(N))** 
  `containsAll()` | **O(N^2)** | **O(N^2)** | **O(Log(N))** 
+ 
+ ### Graphs
+ 
+ Command | Performance
+--- | ---
+`get()` | <img src="https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Command/get.png" width="30%"> 
+`add()` | <img src="https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Command/add.png" width="30%">
+`remove()` | <img src="https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Command/remove.png" width="30%">
+`find()` | <img src="https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Command/contain-search.png" width="30%">
+`contains()` | <img src="https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Command/contain-search.png" width="30%">
+
+---
+
+Algorithm | Performance
+--- | ---
+`addAll()` | <img src="https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Algoritm/AddAll.png" width="30%">
+`removeAll()` | <img src="https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Algoritm/RemoveAll.png" width="30%">
+`retailAll()` | <img src="https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Algoritm/RetailAll-ContainsAll.png" width="30%">
+`containsAll()` | <img src="https://github.com/OmerKayaa/Filtering-by-Number-Algorithm/blob/master/Presention(non-essential)/Algoritm/RetailAll-ContainsAll.png" width="30%">
+
